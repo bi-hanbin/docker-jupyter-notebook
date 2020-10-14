@@ -2,20 +2,20 @@
   "kernel_python_credentials" : {
     "username": "",
     "password": "",
-    "url": "http://host.docker.internal:8998",
+    "url": "http://172.10.1.223:8998",
     "auth": "None"
   },
 
   "kernel_scala_credentials" : {
     "username": "",
     "password": "",
-    "url": "http://host.docker.internal:8998",
+    "url": "http://172.10.1.223:8998",
     "auth": "None"
   },
   "kernel_r_credentials": {
     "username": "",
     "password": "",
-    "url": "http://host.docker.internal:8998"
+    "url": "http://172.10.1.223:8998"
   },
 
   "logging_config": {
@@ -52,7 +52,13 @@
   "session_configs": {
     "driverMemory": "1000M",
     "executorCores": 2,
-    "queue": "work01"
+    "queue": "work01",
+    "conf": {
+      "spark.pyspark.python":"python3",
+      "spark.pyspark.virtualenv.enabled": "true",
+      "spark.pyspark.virtualenv.type": "native",
+      "spark.pyspark.virtualenv.bin.path": "/usr/bin/virtualenv"
+    }
   },
 
   "use_auto_viz": true,
